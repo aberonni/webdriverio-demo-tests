@@ -11,7 +11,7 @@ document.body.appendChild(extensionElement);
 
 // listener is triggered from background.js
 // when audible property changes on current tab
-chrome.runtime.onMessage.addListener((request) => {
+chrome.runtime.onMessage.addListener(request => {
     if (request.audible) {
         extensionElement.className = element.isPlayingAudioClass;
     } else {

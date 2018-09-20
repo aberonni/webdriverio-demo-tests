@@ -1,8 +1,8 @@
 const assert = require('assert');
 const audioDetector = require('../../audio-detector');
 
-describe('Chrome audio testing extension example', function () {
-    it('makes sure that Michael says NOOOO!', function () {
+describe('Chrome audio testing extension example', function() {
+    it('makes sure that Michael says NOOOO!', function() {
         const { element } = audioDetector.config;
 
         browser
@@ -11,10 +11,14 @@ describe('Chrome audio testing extension example', function () {
             .pause(3000);
 
         // Element injected by extension if audio has been played
-        const audioIsPlayingElementSelector = `#${element.id}.${element.isPlayingAudioClass}`;
+        const audioIsPlayingElementSelector = `#${element.id}.${
+            element.isPlayingAudioClass
+        }`;
 
         // ...if the element doesn't exist then the test should fail
-        const isPlayingAudio = browser.isExisting(audioIsPlayingElementSelector);
+        const isPlayingAudio = browser.isExisting(
+            audioIsPlayingElementSelector
+        );
         assert(isPlayingAudio, 'Michael is saying NOOOO!');
     });
 });

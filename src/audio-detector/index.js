@@ -1,8 +1,7 @@
 const { join } = require('path');
 const zipper = require('zip-local');
 
-const extension = zipper
-    .sync
+const extension = zipper.sync
     .zip(join(__dirname, 'extension'))
     .memory()
     .toString('base64');
