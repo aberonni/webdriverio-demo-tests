@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio",
+    "test:appium": "wdio wdio.conf.appium.js",
+    "test:audio": "wdio wdio.conf.audio.js",
     "lint": "eslint ."
   },
   "keywords": [],
@@ -20,6 +22,7 @@
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-webdriverio": "^1.0.1",
     "prettier": "1.14.3",
+    "wdio-appium-service": "^0.2.3",
     "wdio-chromedriver-service": "^0.1.3",
     "wdio-firefox-profile-service": "^0.1.3",
     "wdio-mocha-framework": "^0.6.3",

@@ -1,19 +1,13 @@
-const audioDetector = require('./src/audio-detector');
-
 exports.config = {
-    specs: ['src/specs/**/*.js'],
+    specs: ['src/specs/all/**/*.js'],
     capabilities: [
         {
             maxInstances: 1,
             browserName: 'chrome',
-            'goog:chromeOptions': {
-                extensions: [audioDetector.extension],
-            },
         },
         {
             maxInstances: 1,
             browserName: 'firefox',
-            exclude: ['src/specs/chrome/**/*.js'],
         },
     ],
     reporters: ['spec'],
