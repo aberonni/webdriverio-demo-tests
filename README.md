@@ -1,6 +1,6 @@
 # webdriverio-exanples
 
-Some examples of complicated tests with [webdriver.io](http://webdriver.io/).
+A collection of complicated tests with [webdriver.io](http://webdriver.io/).
 
 ## Prerequisites
 

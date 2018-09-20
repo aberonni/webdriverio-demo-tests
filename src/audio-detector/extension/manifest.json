@@ -1,0 +1,28 @@
+{
+  "name": "Tab audio status",
+  "description": "Displays whether a tab is running audio or not",
+  "version": "1.0",
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [{
+    "matches": [
+      "*://*/*"
+    ],
+    "js": [
+      "config.js",
+      "content.js"
+    ],
+    "run_at": "document_end",
+    "all_frames": true
+  }],
+  "browser_action": {
+    "default_name": "Tab Audio"
+  },
+  "manifest_version": 2,
+  "permissions": [
+    "activeTab"
+  ]
+}

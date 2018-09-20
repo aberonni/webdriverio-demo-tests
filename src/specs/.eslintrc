@@ -1,0 +1,15 @@
+{
+    "plugins": [
+        "webdriverio",
+        "mocha"
+    ],
+    "env": {
+        "webdriverio/wdio": true,
+        "mocha": true
+    },
+    "rules": {
+        "mocha/no-mocha-arrows": "error",
+        "prefer-arrow-callback": "off",
+        "func-names": "off"
+    }
+}
