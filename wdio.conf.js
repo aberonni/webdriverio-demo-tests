@@ -1,5 +1,5 @@
 exports.config = {
-    specs: ['src/specs/all/**/*.js'],
+    specs: ['src/specs/basic/**/*.js', 'src/specs/a11y/**/*.js'],
     capabilities: [
         {
             maxInstances: 1,

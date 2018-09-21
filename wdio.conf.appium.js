@@ -2,6 +2,7 @@ const { config } = require('./wdio.conf');
 
 exports.config = {
     ...config,
+    specs: ['src/specs/basic/**/*.js'],
     port: 4723,
     capabilities: [
         {
@@ -10,7 +11,6 @@ exports.config = {
             deviceName: 'iPhone 5s',
             platformVersion: '11.4',
             platformName: 'iOS',
-            exclude: ['src/specs/all/a11y.js'],
         },
     ],
     services: ['appium'],
