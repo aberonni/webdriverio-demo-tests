@@ -3,17 +3,12 @@
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
-    "extends": [
-        "eslint:recommended",
-        "airbnb-base"
-    ],
+    "extends": ["prettier", "eslint:recommended", "airbnb-base"],
     "env": {
         "node": true,
         "es6": true
     },
-    "plugins": [
-        "prettier"
-    ],
+    "plugins": ["prettier"],
     "rules": {
         "prettier/prettier": "error",
         "indent": [
@@ -23,43 +18,18 @@
                 "SwitchCase": 1
             }
         ],
-        "space-before-function-paren": [
-            "error",
-            "never"
-        ],
-        "comma-dangle": [
-            "error",
-            "always-multiline"
-        ],
-        "radix": [
-            "error",
-            "as-needed"
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
-        "func-names": [
-            "error",
-            "as-needed"
-        ],
+        "space-before-function-paren": ["error", "never"],
+        "comma-dangle": ["error", "always-multiline"],
+        "radix": ["error", "as-needed"],
+        "linebreak-style": ["error", "unix"],
+        "quotes": ["error", "single"],
+        "semi": ["error", "always"],
+        "func-names": ["error", "as-needed"],
         "import/no-extraneous-dependencies": [
             "error",
             {
                 "devDependencies": true
             }
-        ],
-        "max-len": [
-            "error",
-            80
         ],
         "arrow-parens": "off"
     }
