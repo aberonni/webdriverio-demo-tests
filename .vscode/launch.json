@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "address": "localhost",
+            "name": "Run open spec file",
+            "port": 5859,
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/wdio",
+            "windows": {
+                "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/wdio.cmd"
+            },
+            "cwd": "${workspaceRoot}",
+            "console": "integratedTerminal",
+            "args": [
+                "wdio.conf.debug.js",
+                "--spec",
+                "${relativeFile}"
+                // To run a specific file, you can use:
+                //"--spec", "test/specs/foo.spec.js"
+            ]
+        }
+    ]
+}
