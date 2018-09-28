@@ -17,7 +17,7 @@ yarn
 
 ## Running tests
 
-### Basic and a11y tests on Chrome and Firefox
+### Basic and a11y tests on Chrome, Nexus 5 (emulated with Chrome) and Firefox
 
 Runs following tests:
 - check the title of hacker news website
@@ -46,7 +46,7 @@ yarn global add appium
 yarn test:appium
 ```
 
-### Visual regression testing with chrome
+### Visual regression testing on Chrome
 
 This test uses the WebdriverIO [visual regression service](http://webdriver.io/guide/services/visual-regression.html) that allows you to compare screenshots of a website.
 

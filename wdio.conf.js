@@ -7,6 +7,15 @@ exports.config = {
         },
         {
             maxInstances: 1,
+            browserName: 'chrome',
+            chromeOptions: {
+                mobileEmulation: {
+                    deviceName: 'Nexus 5',
+                },
+            },
+        },
+        {
+            maxInstances: 1,
             browserName: 'firefox',
         },
     ],
