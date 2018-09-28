@@ -1,3 +1,4 @@
+const args = require('./src/chrome.args.js');
 const { config } = require('./wdio.conf');
 
 // This configuration is used by vscode for debugging
@@ -9,6 +10,7 @@ exports.config = {
         {
             maxInstances: 1,
             browserName: 'chrome',
+            chromeOptions: { args },
         },
     ],
 };

@@ -1,5 +1,6 @@
 const path = require('path');
 const VisualRegressionCompare = require('wdio-visual-regression-service/compare');
+const args = require('./src/chrome.args.js');
 const { config } = require('./wdio.conf');
 
 const getScreenshotName = basePath => context => {
@@ -35,6 +36,7 @@ exports.config = {
         {
             maxInstances: 1,
             browserName: 'chrome',
+            chromeOptions: { args },
         },
     ],
     services: config.services.concat(['visual-regression']),

@@ -1,3 +1,4 @@
+const args = require('./src/chrome.args.js');
 const { config } = require('./wdio.conf');
 
 exports.config = {
@@ -7,6 +8,7 @@ exports.config = {
         {
             maxInstances: 1,
             browserName: 'chrome',
+            chromeOptions: { args },
         },
     ],
 };

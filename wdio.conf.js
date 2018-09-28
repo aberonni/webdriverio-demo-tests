@@ -1,5 +1,6 @@
 /* global browser */
 const commandsHelper = require('./src/commands');
+const args = require('./src/chrome.args.js');
 
 exports.config = {
     specs: ['src/specs/basic/**/*.js', 'src/specs/a11y/**/*.js'],
@@ -7,11 +8,13 @@ exports.config = {
         {
             maxInstances: 1,
             browserName: 'chrome',
+            chromeOptions: { args },
         },
         {
             maxInstances: 1,
             browserName: 'chrome',
             chromeOptions: {
+                args,
                 mobileEmulation: {
                     deviceName: 'Nexus 5',
                 },
