@@ -39,9 +39,25 @@ yarn test:audio
 
 These tests use [appium](http://appium.io/) to leverage XCode's emulators
 
-To make this work you will have to also install appium.
+To make this work you will also have to install appium.
 
 ```
 yarn global add appium
 yarn test:appium
+```
+
+### Visual regression testing with chrome
+
+This test uses the WebdriverIO [visual regression service](http://webdriver.io/guide/services/visual-regression.html) that allows you to compare screenshots of a website.
+
+```
+yarn test:vrs
+```
+
+If the test fails, you can debug what is happening by looking at the `screenshots/latest` and `screenshots/diff` folders.
+
+If you decide that the latest screenshtos should become the baseling, you can update the baseline screenshots that are used for comparison.
+
+```
+yarn test:vrs:update
 ```
