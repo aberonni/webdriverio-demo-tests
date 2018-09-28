@@ -61,3 +61,19 @@ If you decide that the latest screenshtos should become the baseling, you can up
 ```
 yarn test:vrs:update
 ```
+
+### Checking console logs on Chrome
+
+Make sure that the console log is empty using the [`browser.log()`](http://webdriver.io/api/protocol/log.html) function.
+
+```
+yarn test:logs
+```
+
+If the test fails, you can debug what is happening by looking at the `screenshots/latest` and `screenshots/diff` folders.
+
+If you decide that the latest screenshtos should become the baseling, you can update the baseline screenshots that are used for comparison.
+
+```
+yarn test:vrs:update
+```
