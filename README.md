@@ -62,12 +62,14 @@ If you decide that the latest screenshtos should become the baseling, you can up
 yarn test:vrs:update
 ```
 
-### Checking console logs on Chrome
+### Checking console logs and video on Chrome
 
 Make sure that the console log is empty using the [`browser.log()`](http://webdriver.io/api/protocol/log.html) function.
 
+Make sure that a video is playing by checking the video's `paused` state.
+
 ```
-yarn test:logs
+yarn test:chrome
 ```
 
 If the test fails, you can debug what is happening by looking at the `screenshots/latest` and `screenshots/diff` folders.

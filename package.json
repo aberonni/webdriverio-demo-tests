@@ -7,7 +7,7 @@
     "test": "wdio",
     "test:appium": "wdio wdio.conf.appium.js",
     "test:audio": "wdio wdio.conf.audio.js",
-    "test:logs": "wdio wdio.conf.logs.js",
+    "test:chrome": "wdio wdio.conf.chrome.js",
     "test:vrs": "wdio wdio.conf.vrs.js",
     "test:vrs:update": "UPDATE_BASELINE=1 wdio wdio.conf.vrs.js",
     "lint": "eslint ."

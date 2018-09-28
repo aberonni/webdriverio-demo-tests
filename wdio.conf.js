@@ -1,3 +1,6 @@
+/* global browser */
+const commandsHelper = require('./src/commands');
+
 exports.config = {
     specs: ['src/specs/basic/**/*.js', 'src/specs/a11y/**/*.js'],
     capabilities: [
@@ -21,6 +24,15 @@ exports.config = {
     ],
     reporters: ['spec'],
     services: ['selenium-standalone', 'chromedriver'],
+    /**
+     * Gets executed before test execution begins. At this point you can access to all global
+     * variables like `browser`. It is the perfect place to define custom commands.
+     * @param {Array.<Object>} capabilities list of capabilities details
+     * @param {Array.<String>} specs List of spec file paths that are to be run
+     */
+    before() {
+        commandsHelper(browser);
+    },
     // Set a base URL in order to shorten url command calls.
     // If your `url` parameter starts with `/`, the base url gets prepended,
     // not including the path portion of your baseUrl.
