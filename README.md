@@ -1,4 +1,5 @@
 # webdriverio-advanced-examples
+[![Build Status](https://travis-ci.org/aberonni/webdriverio-advanced-examples.svg?branch=master)](https://travis-ci.org/aberonni/webdriverio-advanced-examples)
 
 A collection of complicated tests with [webdriver.io](http://webdriver.io/).
 
