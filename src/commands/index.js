@@ -1,4 +1,4 @@
-const assert = require('assert');
+const { assert } = require('chai');
 
 function getVideoPausedState(browser, videoSelector) {
     return browser.selectorExecute(

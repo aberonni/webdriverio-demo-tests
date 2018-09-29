@@ -1,4 +1,4 @@
-const assert = require('assert');
+const { assert } = require('chai');
 
 describe('Basic example on hacker news page', function() {
     it('should have the right title', function() {

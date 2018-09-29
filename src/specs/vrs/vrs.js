@@ -1,4 +1,4 @@
-const assert = require('assert');
+const { assert } = require('chai');
 
 describe('simple vrs test on hacker news', function() {
     it('test visual aspect of search form in footer', function() {

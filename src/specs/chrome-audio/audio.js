@@ -1,4 +1,4 @@
-const assert = require('assert');
+const { assert } = require('chai');
 const audioDetector = require('../../audio-detector');
 
 describe('Chrome audio testing extension example', function() {

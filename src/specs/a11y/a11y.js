@@ -1,6 +1,6 @@
 // load the axe-core script
 const axeSource = require('axe-core').source;
-const assert = require('assert');
+const { assert } = require('chai');
 
 describe('A11y testing with axe example', function() {
     it('should verify that there are no critical a11y violations', function() {
@@ -28,10 +28,6 @@ describe('A11y testing with axe example', function() {
             v => v.impact === 'critical'
         );
 
-        assert.equal(
-            violations.length,
-            0,
-            'Expected no critical a11y violations'
-        );
+        assert.lengthOf(violations, 0, 'Expected no critical a11y violations');
     });
 });
