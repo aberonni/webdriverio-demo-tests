@@ -1,11 +1,12 @@
 const { assert } = require('chai');
 
-describe('simple vrs test on hacker news', function() {
-    it('test visual aspect of search form in footer', function() {
-        browser.url('/');
+describe('simple vrs test on google', function() {
+    it('test that the logo has not changed', function() {
+        browser.url('https://www.google.com/');
         browser.pause(2000);
 
-        const results = browser.checkElement('form');
+        // testing an image to avoid cross-platform issues with fonts on travis
+        const results = browser.checkElement('#hplogo');
         results.forEach(result => assert.ok(result.isExactSameImage));
     });
 });
