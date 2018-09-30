@@ -6,15 +6,13 @@ const { config } = require('./wdio.conf');
 const getScreenshotName = basePath => context => {
     const { type } = context;
     const { title } = context.test;
-    const browserVersion = parseInt(context.browser.version);
-    const browserName = context.browser.name;
     const browserViewport = context.meta.viewport;
     const { width, height } = browserViewport;
 
     return path.join(
         process.cwd(),
         basePath,
-        `${title}_${type}_${browserName}_v${browserVersion}_${width}x${height}.png`
+        `${title}_${type}_${width}x${height}.png`
     );
 };
 
