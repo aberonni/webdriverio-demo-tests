@@ -10,6 +10,7 @@
     "test:chrome": "wdio wdio.conf.chrome.js",
     "test:vrs": "wdio wdio.conf.vrs.js",
     "test:vrs:update": "UPDATE_BASELINE=1 wdio wdio.conf.vrs.js",
+    "test:zalenium": "wdio wdio.conf.zalenium.js",
     "lint": "eslint ."
   },
   "keywords": [],

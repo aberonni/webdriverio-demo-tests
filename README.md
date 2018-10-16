@@ -73,10 +73,12 @@ Make sure that a video is playing by checking the video's `paused` state.
 yarn test:chrome
 ```
 
-If the test fails, you can debug what is happening by looking at the `screenshots/latest` and `screenshots/diff` folders.
+### Running tests on Zalenium
 
-If you decide that the latest screenshtos should become the baseling, you can update the baseline screenshots that are used for comparison.
+You will have to first get Zalenium up and running. Install Docker and then follow the instructions in [Zalenium's documentation](https://github.com/zalando/zalenium#getting-started).
+
+Once Zalenium is running, you should be able to visit [http://localhost:4444/dashboard](http://localhost:4444/dashboard) and view the Zalenium dashboard (and [other cool stuff](https://github.com/zalando/zalenium#additional-features) too).
 
 ```
-yarn test:vrs:update
+yarn test:zalenium
 ```
