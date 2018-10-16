@@ -16,13 +16,21 @@ A collection of complicated tests with [webdriver.io](http://webdriver.io/).
 yarn
 ```
 
+## Start Zalenium
+
+You must have docker installed and ready to use.
+
+```
+yarn zalenium
+```
+
 ## Running tests
 
 ### Basic and a11y tests on Chrome, Nexus 5 (emulated with Chrome) and Firefox
 
 Runs following tests:
-- check the title of hacker news website
-- load a website and check for accessibility errors with [axe](https://github.com/dequelabs/axe-core)
+- check the title of static website
+- load static website and check for accessibility errors with [axe](https://github.com/dequelabs/axe-core)
 
 ```
 yarn test
@@ -71,14 +79,4 @@ Make sure that a video is playing by checking the video's `paused` state.
 
 ```
 yarn test:chrome
-```
-
-### Running tests on Zalenium
-
-You will have to first get Zalenium up and running. Install Docker and then follow the instructions in [Zalenium's documentation](https://github.com/zalando/zalenium#getting-started).
-
-Once Zalenium is running, you should be able to visit [http://localhost:4444/dashboard](http://localhost:4444/dashboard) and view the Zalenium dashboard (and [other cool stuff](https://github.com/zalando/zalenium#additional-features) too).
-
-```
-yarn test:zalenium
 ```
