@@ -26,7 +26,7 @@ exports.config = {
         },
     ],
     reporters: ['spec'],
-    services: ['selenium-standalone', 'chromedriver'],
+    services: ['selenium-standalone'],
     /**
      * Gets executed before test execution begins. At this point you can access to all global
      * variables like `browser`. It is the perfect place to define custom commands.

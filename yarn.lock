@@ -312,9 +312,9 @@ check-error@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/check-error/-/check-error-1.0.2.tgz#574d312edd88bb5dd8912e9286dd6c0aed4aac82"
 
-chromedriver@^2.42.0:
-  version "2.42.0"
-  resolved "https://registry.yarnpkg.com/chromedriver/-/chromedriver-2.42.0.tgz#49d8d314389e76e143a54451b85a8ddfcb1c6128"
+chromedriver@^4.2.0:
+  version "2.42.1"
+  resolved "https://registry.yarnpkg.com/chromedriver/-/chromedriver-2.42.1.tgz#566964c1221fbd9fd1ce836734dd92735f1ff8fb"
   dependencies:
     del "^3.0.0"
     extract-zip "^1.6.7"
@@ -2254,12 +2254,6 @@ walkdir@^0.0.11:
 wdio-appium-service@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/wdio-appium-service/-/wdio-appium-service-0.2.3.tgz#988c5c545b06ba184e6245f49ae8420071fa4009"
-
-wdio-chromedriver-service@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/wdio-chromedriver-service/-/wdio-chromedriver-service-0.1.3.tgz#4d7af4d0e591a6c68c3506f8eb10a2783b5b9f8e"
-  dependencies:
-    fs-extra "^0.30.0"
 
 wdio-dot-reporter@~0.0.8:
   version "0.0.10"
