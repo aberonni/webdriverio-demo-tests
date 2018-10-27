@@ -9,9 +9,6 @@ describe('A11y testing with axe example', function() {
         // inject the axe script - this will make axe availabile in the page
         browser.execute(axeSource);
 
-        // make sure that the browser has enough time to execute axe
-        // it may take a while
-        // browser.timeouts('script', 60000);
         // run axe inside the browser and get results
         const { value } = browser.executeAsync(function(done) {
             // eslint-disable-next-line no-undef

@@ -35,6 +35,21 @@ yarn zalenium
 yarn test:zalenium
 ```
 
+### Run all tests on Browserstack
+
+Before running tests on Browserstack, you'll have to add a `.env` file in the root of the project that looks like this:
+
+```
+BROWSERSTACK_USERNAME=your_username
+BROWSERSTACK_ACCESS_KEY=your_access_key
+```
+
+Afterwards you can run tests on Browserstack
+
+```
+yarn test:browserstack
+```
+
 ### Basic tests on XCode Emulated iPhone (appium)
 
 These tests use [appium](http://appium.io/) to leverage XCode's emulators
