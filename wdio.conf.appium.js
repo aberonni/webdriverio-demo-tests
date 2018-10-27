@@ -8,12 +8,12 @@ exports.config = {
         {
             maxInstances: 1,
             browserName: 'safari',
-            deviceName: 'iPhone 5s',
-            platformVersion: '11.4',
+            deviceName: 'iPhone XS Max',
+            platformVersion: '12.0',
             platformName: 'iOS',
         },
     ],
-    services: ['appium'],
+    services: ['static-server', 'appium'],
     appium: {
         args: {
             address: '127.0.0.1',

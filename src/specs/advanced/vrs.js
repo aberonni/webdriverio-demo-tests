@@ -1,7 +1,7 @@
 const { assert } = require('chai');
 
 describe('simple vrs test', function() {
-    it('test that the footer has not changed', function() {
+    it('tests that the footer has not changed', function() {
         const elementToCheck = '#footer';
 
         browser.url('/');
