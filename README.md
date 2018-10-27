@@ -1,7 +1,9 @@
-# webdriverio-advanced-examples
+# WebdriverIO Demo Tests
 [![Build Status](https://travis-ci.org/aberonni/webdriverio-advanced-examples.svg?branch=master)](https://travis-ci.org/aberonni/webdriverio-advanced-examples) [![Greenkeeper badge](https://badges.greenkeeper.io/aberonni/webdriverio-advanced-examples.svg)](https://greenkeeper.io/)
 
-A collection of complicated tests with [webdriver.io](http://webdriver.io/).
+This repository showcases different ways to run tests and various techniques for testing trickier aspects of a website. These examples use [WebdriverIO](http://webdriver.io/), but many of these strategies can be applied with other testing frameworks too.
+
+The different ways in which you can run tests are listed below. To explore what the tests are doing, take a look at the [src/specs](src/specs) folder.
 
 ## Prerequisites
 
@@ -10,34 +12,46 @@ A collection of complicated tests with [webdriver.io](http://webdriver.io/).
 - [appium](http://appium.io/) (only for appium tests)
 - [docker](https://www.docker.com/) (only for zalenium tests)
 
-## Install dependencies
+#### Install dependencies
 
-```
-yarn
+```bash
+$ yarn
 ```
 
 ## Running tests
 
-### Run all tests on Chrome
+The following is a list of different ways you can run tests.
 
-```
-yarn test
-```
+> By default you will run all tests, you can run a specific test by adding the `--spec` option. For example: `yarn test --spec src/specs/basic/form.js`
 
-### Run all tests on Zalenium
+### Local Chrome browser
 
-You must have docker installed and ready to use.
+[More info about chromedriver](https://sites.google.com/a/chromium.org/chromedriver/)
 
-```
-# in one terminal
-yarn zalenium
-# in another terminal
-yarn test:zalenium
+This will use chromedriver to take advantage of your local chrome installation so you can see what the browser is doing while the test runs.
+
+```bash
+$ yarn test
 ```
 
-### Run all tests on Browserstack
+### Zalenium
 
-Before running tests on Browserstack, you'll have to add a `.env` file in the root of the project that looks like this:
+[More info about zalenium](https://github.com/zalando/zalenium)
+
+You must have docker installed and ready to use in order to run zalenium. Verify your docker installation with the `docker info` command.
+
+Once docker is ready, run the following commands in two separate terminals.
+
+```bash
+$ yarn zalenium
+$ yarn test:zalenium
+```
+
+### Browserstack
+
+[More info about browserstack](https://automate.browserstack.com)
+
+You must register for an account on browserstack, and then login to [your dashboard](https://automate.browserstack.com/dashboard) to retrieve username and access key. Add a `.env` file in the root of the project that looks like this:
 
 ```
 BROWSERSTACK_USERNAME=your_username
@@ -46,45 +60,39 @@ BROWSERSTACK_ACCESS_KEY=your_access_key
 
 Afterwards you can run tests on Browserstack
 
-```
-yarn test:browserstack
-```
-
-### Basic tests on XCode Emulated iPhone (appium)
-
-These tests use [appium](http://appium.io/) to leverage XCode's emulators
-
-To make this work you will also have to install appium.
-
-```
-yarn global add appium
-yarn test:appium
+```bash
+$ yarn test:browserstack
 ```
 
-### Visual regression testing on Chrome
+### Appium - XCode Emulated iPhone
 
-The tests use the WebdriverIO [visual regression service](http://webdriver.io/guide/services/visual-regression.html) that allows you to compare screenshots of a website.
+[More info about appium](http://appium.io/)
 
-If the tests fail, you can debug what is happening by looking at the `screenshots/latest` and `screenshots/diff` folders.
+These tests use appium to leverage XCode's simulators. To make this work you will also have to install appium.
 
-If you decide that the latest screenshots should become the new baseline, you can update the baseline screenshots that are used for comparison.
-
+```bash
+$ yarn global add appium
+$ yarn test:appium
 ```
-yarn consolidate
-```
 
-## Debugging tests
+### Debugging tests
 
-### Option 1 - VSCode
+You may want to debug tests so you can stop execution and inspect the state of the website.
+
+#### Option 1 - VSCode
 
 If you use VSCode you can debug a test by simply opening a test spec file and pressing `F5`.
 
-### Option 2 - Chrome debugger
+#### Option 2 - Chrome debugger
 
 Run
 
-```
-yarn tast:debug
+```bash
+$ yarn test:debug
 ```
 
 And then navigate to [chrome://inspect](chrome://inspect) to connect to the debugger.
+
+## :tada: Contributions
+
+Contributions are very welcome! If you have an issue, feedback, enhancement, improvement or anything else, please do open an issue or a PR.
