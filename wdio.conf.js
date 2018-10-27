@@ -7,18 +7,22 @@ const visualRegression = require('./src/vrsConfiguration');
 const audioDetector = require('./src/audio-detector');
 
 const staticServerPort = 4242;
-const chromeArgs = ['no-sandbox', 'disable-dev-shm-usage', 'disable-gpu'];
+const chromeArgs = ['--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu'];
 let specs = ['src/specs/basic/**/*.js', 'src/specs/advanced/**/*.js'];
 let excludedTests = [];
+let extensions = [audioDetector.extension];
 
 if (process.env.CI || process.env.TRAVIS) {
-    chromeArgs.push('headless');
+    chromeArgs.push('--headless');
+    // disabled because not working on Travis CI
     excludedTests = [
-        // currently disabled because not working on Travis CI
-        // and I can't be bothered to figure out why :)
-        'src/specs/advanced/audio.js',
+        // cannot test vrs on travis - different font rendering
         'src/specs/advanced/vrs.js',
+        // cannot use extensions in headless mode
+        'src/specs/advanced/audio.js',
     ];
+    // cannot use extensions in headless mode
+    extensions = [];
 }
 
 if (process.env.CONSOLIDATE) {
@@ -34,9 +38,9 @@ exports.config = {
         {
             maxInstances: 1,
             browserName: 'chrome',
-            chromeOptions: { args: chromeArgs },
             'goog:chromeOptions': {
-                extensions: [audioDetector.extension],
+                extensions,
+                args: chromeArgs,
             },
             exclude: excludedTests,
         },
