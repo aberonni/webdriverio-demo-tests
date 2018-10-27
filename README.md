@@ -1,5 +1,5 @@
 # WebdriverIO Demo Tests
-[![Build Status](https://travis-ci.org/aberonni/webdriverio-advanced-examples.svg?branch=master)](https://travis-ci.org/aberonni/webdriverio-advanced-examples) [![Greenkeeper badge](https://badges.greenkeeper.io/aberonni/webdriverio-advanced-examples.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/aberonni/webdriverio-demo-tests.svg?branch=master)](https://travis-ci.org/aberonni/webdriverio-demo-tests)
 
 This repository showcases different ways to run tests and various techniques for testing trickier aspects of a website. These examples use [WebdriverIO](http://webdriver.io/), but many of these strategies can be applied with other testing frameworks too.
 
