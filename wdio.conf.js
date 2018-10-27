@@ -1,7 +1,6 @@
 /* global browser */
 const chromedriver = require('chromedriver');
 const tcpPortUsed = require('tcp-port-used');
-const ip = require('ip');
 
 const commandsHelper = require('./src/commands');
 const visualRegression = require('./src/vrsConfiguration');
@@ -79,7 +78,7 @@ exports.config = {
     // not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/`
     // (like `some/path`), the base url gets prepended directly.
-    baseUrl: `http://${ip.address()}:${staticServerPort}/`,
+    baseUrl: `http://localhost:${staticServerPort}/`,
     // Saves a screenshot to a given path if a command fails.
     screenshotPath: './errorShots/',
     // Make sure you have the wdio adapter package for the specific

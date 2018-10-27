@@ -5,7 +5,7 @@ const { capabilities } = config;
 
 capabilities.forEach(capability => {
     // can't test vrs on zalenium
-    // because different environments yield different results
+    // because different environments yield slightly different visual results
     capability.exclude.push('src/specs/advanced/vrs.js');
 });
 
@@ -25,4 +25,5 @@ exports.config = {
             }
         });
     },
+    baseUrl: `http://host.docker.internal:${config.staticServerPort}/`,
 };
