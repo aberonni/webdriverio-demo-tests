@@ -14,7 +14,7 @@ describe('Check form on static website', function() {
         IndexPage.contactMessage.setValue(message);
         IndexPage.contactSubmit.click();
 
-        const output = IndexPage.contactOutput;
-        assert.equal(output, `${name} ${email} ${message}`);
+        const output = browser.alertText();
+        assert.equal(output, `Form data: "${name}" "${email}" "${message}"`);
     });
 });

@@ -72,3 +72,19 @@ If you decide that the latest screenshots should become the new baseline, you ca
 ```
 yarn consolidate
 ```
+
+## Debugging tests
+
+### Option 1 - VSCode
+
+If you use VSCode you can debug a test by simply opening a test spec file and pressing `F5`.
+
+### Option 2 - Chrome debugger
+
+Run
+
+```
+yarn tast:debug
+```
+
+And then navigate to [chrome://inspect](chrome://inspect) to connect to the debugger.

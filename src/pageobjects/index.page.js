@@ -17,10 +17,6 @@ class LoginPage extends Page {
         return browser.element('input[type="submit"]');
     }
 
-    get contactOutput() {
-        return browser.getText('div#contact-output');
-    }
-
     open() {
         super.open('/');
     }

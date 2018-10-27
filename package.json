@@ -10,6 +10,7 @@
     "test": "wdio",
     "test:appium": "wdio wdio.conf.appium.js",
     "test:browserstack": "wdio wdio.conf.browserstack.js",
+    "test:debug": "wdio wdio.conf.debug.js",
     "test:zalenium": "wdio wdio.conf.zalenium.js",
     "zalenium": "./start-zalenium.sh"
   },
