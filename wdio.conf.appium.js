@@ -1,5 +1,9 @@
 const { config } = require('./wdio.conf');
 
+// delete chromeriver specific options
+delete config.port;
+delete config.path;
+
 exports.config = {
     ...config,
     specs: ['src/specs/basic/**/*.js'],

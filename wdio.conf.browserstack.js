@@ -2,8 +2,9 @@ require('dotenv').load();
 
 const { config } = require('./wdio.conf');
 
-delete config.onPrepare;
-delete config.onComplete;
+// delete chromeriver specific options
+delete config.port;
+delete config.path;
 
 exports.config = {
     ...config,
@@ -19,7 +20,7 @@ exports.config = {
             ],
         },
     ],
-    services: config.services.concat(['browserstack']),
+    services: ['static-server', 'browserstack'],
     user: process.env.BROWSERSTACK_USERNAME,
     key: process.env.BROWSERSTACK_ACCESS_KEY,
     browserstackLocal: true,

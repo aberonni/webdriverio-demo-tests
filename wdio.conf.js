@@ -1,7 +1,4 @@
 /* global browser */
-const chromedriver = require('chromedriver');
-const tcpPortUsed = require('tcp-port-used');
-
 const commandsHelper = require('./src/commands');
 const visualRegression = require('./src/vrsConfiguration');
 const audioDetector = require('./src/audio-detector');
@@ -46,11 +43,15 @@ exports.config = {
         },
     ],
     reporters: ['spec'],
-    services: ['static-server', 'visual-regression'],
+    services: ['static-server', 'visual-regression', 'chromedriver'],
     staticServerFolders: [{ mount: '/', path: './website' }],
     staticServerLogs: true,
     staticServerPort,
+    // vrs options
     visualRegression,
+    // chromedriver options
+    port: '9515',
+    path: '/',
     /**
      * Gets executed before test execution begins. At this point you can access to all global
      * variables like `browser`. It is the perfect place to define custom commands.
@@ -59,23 +60,6 @@ exports.config = {
      */
     before() {
         commandsHelper(browser);
-    },
-    onPrepare() {
-        return tcpPortUsed.check(4444, '127.0.0.1').then(inUse => {
-            if (inUse) {
-                throw new Error(
-                    'Port 4444 is already in use by another service.'
-                );
-            }
-
-            return chromedriver.start(
-                ['--port=4444', '--url-base=/wd/hub'],
-                true
-            );
-        });
-    },
-    onComplete() {
-        chromedriver.stop();
     },
     // Set a base URL in order to shorten url command calls.
     // If your `url` parameter starts with `/`, the base url gets prepended,
