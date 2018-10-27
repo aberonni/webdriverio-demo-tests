@@ -1,9 +1,10 @@
 const { assert } = require('chai');
 
 describe('Make sure there are no errors on the index page', function() {
-    it('get console log and make sure it is empty', async function() {
+    it('get console log and make sure there are no errors', async function() {
         browser.url('/');
-        const log = await browser.log('browser').value;
-        assert.lengthOf(log, 0, 'The console log is empty');
+        const logs = await browser.log('browser').value;
+        const errors = logs.filter(log => log.level === 'SEVERE');
+        assert.lengthOf(errors, 0, 'The console does not contain errors');
     });
 });
