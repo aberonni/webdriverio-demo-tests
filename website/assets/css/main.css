@@ -2621,7 +2621,8 @@ input, select, textarea {
 				margin-top: 0;
 			}
 
-			.image.main img {
+			.image.main img,
+			.image.main video {
 				width: 100%;
 			}
 

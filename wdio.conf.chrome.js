@@ -6,7 +6,6 @@ const { config } = require('./wdio.conf');
 exports.config = {
     ...config,
     specs: ['src/specs/chrome/**/*.js'],
-    services: [],
     capabilities: [
         {
             maxInstances: 1,
