@@ -25,8 +25,4 @@ exports.config = {
             }
         });
     },
-    onComplete() {
-        // overriding this function because in the base configuration
-        // this is where we stop chromedriver
-    },
 };
