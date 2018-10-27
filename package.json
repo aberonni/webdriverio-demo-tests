@@ -4,15 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "zalenium": "./start-zalenium.sh",
+    "consolidate": "rm -rf screenshots && CONSOLIDATE=1 yarn test",
+    "lint": "eslint .",
     "start": "http-server website -o -s",
     "test": "wdio",
     "test:appium": "wdio wdio.conf.appium.js",
-    "test:audio": "wdio wdio.conf.audio.js",
-    "test:chrome": "wdio wdio.conf.chrome.js",
-    "test:vrs": "wdio wdio.conf.vrs.js",
-    "test:vrs:update": "UPDATE_BASELINE=1 wdio wdio.conf.vrs.js",
-    "lint": "eslint ."
+    "test:zalenium": "wdio wdio.conf.zalenium.js",
+    "zalenium": "./start-zalenium.sh"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +18,7 @@
   "devDependencies": {
     "axe-core": "^3.1.2",
     "chai": "^4.2.0",
-    "chromedriver": "^2.42.1",
+    "chromedriver": "^2.43.1",
     "eslint": "^5.6.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.0.1",
@@ -31,6 +29,7 @@
     "http-server": "^0.11.1",
     "ip": "^1.1.5",
     "prettier": "1.14.3",
+    "tcp-port-used": "^1.0.1",
     "wdio-appium-service": "^0.2.3",
     "wdio-firefox-profile-service": "^0.1.3",
     "wdio-mocha-framework": "^0.6.3",

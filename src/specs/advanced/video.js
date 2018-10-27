@@ -1,4 +1,4 @@
-describe('Check jwplayer demo page', function() {
+describe('Check video page', function() {
     it('should pause/play video when clicking on it', function() {
         browser.url('/video.html');
 

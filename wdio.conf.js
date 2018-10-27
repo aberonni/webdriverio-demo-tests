@@ -1,39 +1,53 @@
 /* global browser */
+const chromedriver = require('chromedriver');
+const tcpPortUsed = require('tcp-port-used');
 const ip = require('ip');
+
 const commandsHelper = require('./src/commands');
-const args = require('./src/chrome.args.js');
+const visualRegression = require('./src/vrsConfiguration');
+const audioDetector = require('./src/audio-detector');
 
 const staticServerPort = 4242;
+const chromeArgs = ['no-sandbox', 'disable-dev-shm-usage', 'disable-gpu'];
+let specs = ['src/specs/basic/**/*.js', 'src/specs/advanced/**/*.js'];
+let excludedTests = [];
+
+if (process.env.CI || process.env.TRAVIS) {
+    chromeArgs.push('headless');
+    excludedTests = [
+        // currently disabled because not working on Travis CI
+        // and I can't be bothered to figure out why :)
+        'src/specs/advanced/audio.js',
+        'src/specs/advanced/vrs.js',
+    ];
+}
+
+if (process.env.CONSOLIDATE) {
+    // set when running 'yarn consolidate'
+    // means that we should override default screenshots
+    // so might as well just run this test
+    specs = ['src/specs/advanced/vrs.js'];
+}
 
 exports.config = {
-    specs: ['src/specs/basic/**/*.js', 'src/specs/a11y/**/*.js'],
+    specs,
     capabilities: [
         {
             maxInstances: 1,
             browserName: 'chrome',
-            chromeOptions: { args },
-        },
-        {
-            maxInstances: 1,
-            browserName: 'chrome',
-            chromeOptions: {
-                args,
-                mobileEmulation: {
-                    deviceName: 'Nexus 5',
-                },
+            chromeOptions: { args: chromeArgs },
+            'goog:chromeOptions': {
+                extensions: [audioDetector.extension],
             },
-        },
-        {
-            maxInstances: 1,
-            browserName: 'firefox',
-            exclude: ['src/specs/a11y/**/*.js'],
+            exclude: excludedTests,
         },
     ],
     reporters: ['spec'],
-    services: ['static-server'],
+    services: ['static-server', 'visual-regression'],
     staticServerFolders: [{ mount: '/', path: './website' }],
     staticServerLogs: true,
     staticServerPort,
+    visualRegression,
     /**
      * Gets executed before test execution begins. At this point you can access to all global
      * variables like `browser`. It is the perfect place to define custom commands.
@@ -42,6 +56,23 @@ exports.config = {
      */
     before() {
         commandsHelper(browser);
+    },
+    onPrepare() {
+        return tcpPortUsed.check(4444, '127.0.0.1').then(inUse => {
+            if (inUse) {
+                throw new Error(
+                    'Port 4444 is already in use by another service.'
+                );
+            }
+
+            return chromedriver.start(
+                ['--port=4444', '--url-base=/wd/hub'],
+                true
+            );
+        });
+    },
+    onComplete() {
+        chromedriver.stop();
     },
     // Set a base URL in order to shorten url command calls.
     // If your `url` parameter starts with `/`, the base url gets prepended,

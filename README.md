@@ -6,9 +6,9 @@ A collection of complicated tests with [webdriver.io](http://webdriver.io/).
 ## Prerequisites
 
 - [node](https://nodejs.org/en/download/)
-- [node-gyp](https://github.com/nodejs/node-gyp#installation)
-- [java](https://java.com/en/download)
+- [yarn](https://yarnpkg.com/en/)
 - [appium](http://appium.io/) (only for appium tests)
+- [docker](https://www.docker.com/) (only for zalenium tests)
 
 ## Install dependencies
 
@@ -16,32 +16,23 @@ A collection of complicated tests with [webdriver.io](http://webdriver.io/).
 yarn
 ```
 
-## Start Zalenium
-
-You must have docker installed and ready to use.
-
-```
-yarn zalenium
-```
-
 ## Running tests
 
-### Basic and a11y tests on Chrome, Nexus 5 (emulated with Chrome) and Firefox
-
-Runs following tests:
-- check the title of static website
-- load static website and check for accessibility errors with [axe](https://github.com/dequelabs/axe-core)
+### Run all tests on Chrome
 
 ```
 yarn test
 ```
 
-### Test audio on Chrome
+### Run all tests on Zalenium
 
-This will open a youtube video and make sure that audio is playing. This is possible thanks to a custom chrome extension that is built on the fly.
+You must have docker installed and ready to use.
 
 ```
-yarn test:audio
+# in one terminal
+yarn zalenium
+# in another terminal
+yarn test:zalenium
 ```
 
 ### Basic tests on XCode Emulated iPhone (appium)
@@ -57,26 +48,12 @@ yarn test:appium
 
 ### Visual regression testing on Chrome
 
-This test uses the WebdriverIO [visual regression service](http://webdriver.io/guide/services/visual-regression.html) that allows you to compare screenshots of a website.
+The tests use the WebdriverIO [visual regression service](http://webdriver.io/guide/services/visual-regression.html) that allows you to compare screenshots of a website.
+
+If the tests fail, you can debug what is happening by looking at the `screenshots/latest` and `screenshots/diff` folders.
+
+If you decide that the latest screenshots should become the new baseline, you can update the baseline screenshots that are used for comparison.
 
 ```
-yarn test:vrs
-```
-
-If the test fails, you can debug what is happening by looking at the `screenshots/latest` and `screenshots/diff` folders.
-
-If you decide that the latest screenshtos should become the baseling, you can update the baseline screenshots that are used for comparison.
-
-```
-yarn test:vrs:update
-```
-
-### Checking console logs and video on Chrome
-
-Make sure that the console log is empty using the [`browser.log()`](http://webdriver.io/api/protocol/log.html) function.
-
-Make sure that a video is playing by checking the video's `paused` state.
-
-```
-yarn test:chrome
+yarn consolidate
 ```
