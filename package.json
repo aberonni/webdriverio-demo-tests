@@ -6,6 +6,7 @@
   "scripts": {
     "consolidate": "rm -rf screenshots && CONSOLIDATE=1 yarn test",
     "lint": "eslint .",
+    "repl": "node repl.js",
     "start": "http-server website -o -s",
     "test": "wdio",
     "test:appium": "wdio wdio.conf.appium.js",

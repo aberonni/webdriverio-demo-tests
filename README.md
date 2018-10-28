@@ -93,6 +93,16 @@ $ yarn test:debug
 
 And then navigate to [chrome://inspect](chrome://inspect) to connect to the debugger.
 
+### REPL interface
+
+[More info about REPL](http://webdriver.io/guide/usage/repl.html)
+
+The REPL interface allows you to test wdio commands on a real browser. The following script will take care of automatically starting chromedriver and running the right REPL command for you.
+
+```bash
+$ yarn repl
+```
+
 ## :tada: Contributions
 
 Contributions are very welcome! If you have an issue, feedback, enhancement, improvement or anything else, please do open an issue or a PR.
