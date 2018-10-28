@@ -5,10 +5,16 @@
     const $submit = $('input[type="submit"]');
 
     function getOutput() {
-        return `Form data: "${$name.val()}" "${$email.val()}" "${$message.val()}"`;
+        const name = $name.val();
+        const email = $email.val();
+        const message = $message.val();
+        if (!name || !email || !message) {
+            return 'Missing field';
+        }
+        return `Form data: "${name}" "${email}" "${message}"`;
     }
 
-    $submit.on('click', (e) => {
+    $submit.on('click', e => {
         e.preventDefault();
         window.alert(getOutput());
     });

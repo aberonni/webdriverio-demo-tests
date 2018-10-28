@@ -15,15 +15,13 @@ module.exports = browser => {
     // assert that the video with the given selector is playing
     browser.addCommand('assertVideoPlaying', videoSelector => {
         const isVideoPaused = getVideoPausedState(browser, videoSelector);
-        assert.ok(!isVideoPaused, `Video '${videoSelector}' is playing`);
-
+        assert.ok(!isVideoPaused, `video '${videoSelector}' is playing`);
         return browser;
     });
     // assert that the video with the given selector is paused
     browser.addCommand('assertVideoPaused', videoSelector => {
         const isVideoPaused = getVideoPausedState(browser, videoSelector);
-        assert.ok(isVideoPaused, `Video '${videoSelector}' is paused`);
-
+        assert.ok(isVideoPaused, `video '${videoSelector}' is paused`);
         return browser;
     });
 };

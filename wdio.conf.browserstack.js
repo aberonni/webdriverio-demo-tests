@@ -15,7 +15,7 @@ exports.config = {
             browserName: 'Chrome',
             browser_version: '69.0',
             exclude: [
-                'src/specs/advanced/vrs.js',
+                'src/specs/advanced/vrt.js',
                 'src/specs/advanced/audio.js',
             ],
         },

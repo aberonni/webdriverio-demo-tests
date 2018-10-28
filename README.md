@@ -22,7 +22,7 @@ $ yarn
 
 The following is a list of different ways you can run tests.
 
-> By default you will run all tests, you can run a specific test by adding the `--spec` option. For example: `yarn test --spec src/specs/basic/form.js`
+> By default you will run all tests, you can run a specific test by adding the `--spec` option. For example: `yarn test --spec src/specs/basic/contactForm.js`
 
 ### Local Chrome browser
 

@@ -1,25 +1,48 @@
 const Page = require('./page');
 
-class LoginPage extends Page {
+class IndexPage extends Page {
+    get introArrow() {
+        return $('#intro .scrolly');
+    }
+
+    get headerLogo() {
+        return $('#header .logo');
+    }
+
+    get featuredArticle() {
+        return $('.posts article');
+    }
+
+    get regularArticles() {
+        return $$('.posts article');
+    }
+
     get contactName() {
-        return browser.element('input#name');
+        return $('input#name');
     }
 
     get contactEmail() {
-        return browser.element('input#email');
+        return $('input#email');
     }
 
     get contactMessage() {
-        return browser.element('textarea#message');
+        return $('textarea#message');
     }
 
     get contactSubmit() {
-        return browser.element('input[type="submit"]');
+        return $('input[type="submit"]');
     }
 
     open() {
         super.open('/');
     }
+
+    submitContactForm(name, email, message) {
+        this.contactName.setValue(name);
+        this.contactEmail.setValue(email);
+        this.contactMessage.setValue(message);
+        this.contactSubmit.click();
+    }
 }
 
-module.exports = new LoginPage();
+module.exports = new IndexPage();

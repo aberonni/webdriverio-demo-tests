@@ -2,8 +2,8 @@
 const axeSource = require('axe-core').source;
 const { assert } = require('chai');
 
-describe('A11y testing with axe example', function() {
-    it('should verify that there are no critical a11y violations', function() {
+describe('a11y - axe', function() {
+    it('index should not contain any critical a11y violations', function() {
         browser.url('/');
 
         // inject the axe script - this will make axe availabile in the page
@@ -23,6 +23,6 @@ describe('A11y testing with axe example', function() {
             v => v.impact === 'critical'
         );
 
-        assert.lengthOf(violations, 0, 'Expected no critical a11y violations');
+        assert.lengthOf(violations, 0, 'index does not contain any violations');
     });
 });

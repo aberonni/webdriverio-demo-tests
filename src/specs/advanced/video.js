@@ -1,5 +1,5 @@
-describe('Check video page', function() {
-    it('should pause/play video when clicking on it', function() {
+describe('video', function() {
+    it('should respond to click and pause/play', function() {
         browser.url('/video.html');
 
         const videoSelector = '#video';

@@ -8,9 +8,8 @@ delete config.path;
 const { capabilities } = config;
 
 capabilities.forEach(capability => {
-    // can't test vrs on zalenium
-    // because different environments yield slightly different visual results
-    capability.exclude.push('src/specs/advanced/vrs.js');
+    // cannot run vrt on travis - different font rendering
+    capability.exclude.push('src/specs/advanced/vrt.js');
 });
 
 // This configuration is used to run tests with zalenium

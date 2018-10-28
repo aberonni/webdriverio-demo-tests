@@ -1,8 +1,8 @@
 const { assert } = require('chai');
 const audioDetector = require('../../audio-detector');
 
-describe('Chrome audio testing extension example', function() {
-    it('makes sure that the video has audio', function() {
+describe('audio with custom extension', function() {
+    it('audio should be playing when video is playing', function() {
         const { element } = audioDetector.config;
 
         browser.url('/video.html');
@@ -24,6 +24,6 @@ describe('Chrome audio testing extension example', function() {
         const isPlayingAudio = browser.isExisting(
             audioIsPlayingElementSelector
         );
-        assert(isPlayingAudio, 'Audio is playing');
+        assert(isPlayingAudio, 'audio is playing');
     });
 });

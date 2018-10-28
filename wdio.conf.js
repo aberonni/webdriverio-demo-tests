@@ -5,7 +5,7 @@ const audioDetector = require('./src/audio-detector');
 
 const staticServerPort = 4242;
 const chromeArgs = ['--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu'];
-let specs = ['src/specs/basic/**/*.js', 'src/specs/advanced/**/*.js'];
+let specs = ['src/specs/**/*.js'];
 let excludedTests = [];
 let extensions = [audioDetector.extension];
 
@@ -13,9 +13,9 @@ if (process.env.CI || process.env.TRAVIS) {
     chromeArgs.push('--headless');
     // disabled because not working on Travis CI
     excludedTests = [
-        // cannot test vrs on travis - different font rendering
-        'src/specs/advanced/vrs.js',
-        // cannot use extensions in headless mode
+        // cannot run vrt on travis - different font rendering
+        'src/specs/advanced/vrt.js',
+        // cannot use any extensions in headless mode
         'src/specs/advanced/audio.js',
     ];
     // cannot use extensions in headless mode
@@ -26,7 +26,7 @@ if (process.env.CONSOLIDATE) {
     // set when running 'yarn consolidate'
     // means that we should override default screenshots
     // so might as well just run this test
-    specs = ['src/specs/advanced/vrs.js'];
+    specs = ['src/specs/advanced/vrt.js'];
 }
 
 exports.config = {
