@@ -5,6 +5,8 @@ This repository showcases different ways to run tests and various techniques for
 
 The different ways in which you can run tests are listed below. To explore what the tests are doing, take a look at the [src/specs](src/specs) folder.
 
+> If this repository is a bit too advanced for your level of knowledge of WebdriverIO and end-to-end testing, I recommend you first check out my [simple chromedriver setup](https://github.com/aberonni/webdriverio-simple-chromedriver-setup) repository.
+
 ## Prerequisites
 
 - [node](https://nodejs.org/en/download/)
