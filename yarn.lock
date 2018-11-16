@@ -368,9 +368,9 @@ check-error@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/check-error/-/check-error-1.0.2.tgz#574d312edd88bb5dd8912e9286dd6c0aed4aac82"
 
-chromedriver@^2.43.1:
-  version "2.43.1"
-  resolved "https://registry.yarnpkg.com/chromedriver/-/chromedriver-2.43.1.tgz#b5ee75857f012ab540e74638206c062a0a962044"
+chromedriver@^2.43.2:
+  version "2.43.2"
+  resolved "https://registry.yarnpkg.com/chromedriver/-/chromedriver-2.43.2.tgz#03e4f4055a3c0b89e71e230a5ee84eee1428566e"
   dependencies:
     del "^3.0.0"
     extract-zip "^1.6.7"
